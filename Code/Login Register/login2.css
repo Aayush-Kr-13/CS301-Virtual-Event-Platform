@@ -72,13 +72,11 @@ input{
     border: none;
     outline: none;;
 }
-    .inp
-    {
+.inp{
         color: rgb(142, 139, 139);
         /* padding: 0% 5%; */
-    }
-.svgs
-{
+}
+.svgs{
     position: relative;
     color: white;
     height: 20px;
@@ -88,10 +86,10 @@ input{
     box-sizing: border-box;
     flex-direction: row;
 }
-.forget
-{
+.forget{
     margin-top: 12px;
 }
+
 img
 {
     box-sizing: border-box;
@@ -145,8 +143,8 @@ button:active{
     transform: translateX(0);
     transition:  transform 0.6s ease-in-out;
 }
-.overlay-left, .overlay-right
-{position: absolute;
+.overlay-left, .overlay-right{
+position: absolute;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -207,3 +205,10 @@ transition:  transform 0.6s ease-in-out;
 .cont1,.cont2{
 margin-bottom: 5%;
 }
+
+input:hover{
+    background:linear-gradient(to right,rgb(24, 7, 116),rgb(119, 24, 124));
+    font-size: 17px;
+    color: rgba(71, 163, 174, 0.947);
+}
+
