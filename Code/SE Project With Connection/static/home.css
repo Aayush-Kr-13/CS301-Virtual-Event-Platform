@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.nav-links{
+    background-image: url(b1.jpg);
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 12px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    border-radius: 10px;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px 20px;
+    border: 2px solid #000;
+    transition: 0.4s ease;
+}
+.nav-links ul li a:hover{
+    border-color: #10bdcd;
+    color: #7173e6;
+}
+
+.logo{
+    position: absolute;
+    top: 4px;
+    left: 15px;;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.design{
+    position: absolute;
+    left: 30%;
+    width: 70%;
+    height: 67%;
+    background-color: rgb(88, 199, 236);
+    border-radius: 0 0 0 100%;
+}
+
+.content{
+    font-size: 40px;
+    position: absolute;
+    left: 5%;
+    top: 30%;
+}
+
+.content:hover{
+    color: #ee2121;
+    transition: .5s ease;
+}
+
+.insert{
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.input-field{
+    height: 35px;
+    width: 180%;
+    border-radius: 10px;
+    background-color: #c5e3ff;
+}
+
+.button{
+    position: absolute;
+    top: 80%;
+    left: 35%;
+}
+
+.btn{
+    height: 35px;
+    width: 350%;
+    border-radius: 10px;
+    background-color: #8bc7ff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.image1{
+    position: absolute;
+    top: 15%;
+    left: 75%;
+}
+
+.image2{
+    position: absolute;
+    left: 75%;
+    top: 73%;
+}
