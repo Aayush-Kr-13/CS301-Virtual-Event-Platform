@@ -1,5 +1,4 @@
-*
-{
+*{
     box-sizing: border-box;
 }
 body{
@@ -7,7 +6,7 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: aquamarine;
+    background-color: rgb(88, 199, 236);
     height: 100%;
     margin: 10%;
 }
@@ -213,8 +212,10 @@ input:hover{
 }
 
 .alert-success{
+    position: absolute;
     height: 38px;
     width: 50%;
+    top: 60px;
     font-size: 26px;
     display: flex;
     text-align: center;

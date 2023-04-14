@@ -55,7 +55,7 @@
 .logo{
     position: absolute;
     top: 4px;
-    left: 15px;;
+    left: 15px;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     cursor: pointer;
@@ -85,4 +85,9 @@
 .logo{
     position: absolute;
     top: 13px;
+}
+
+.logo a{
+    color: #000;
+    text-decoration: none;
 }
