@@ -7,19 +7,18 @@ body{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: aquamarine;
     height: 100%;
     margin: 10%;
 }
 .container
 {
     position: relative;
-    height: 480px;
-    width:768px ;
+    height: 63vh;
+    width:50vw ;
     background : white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 3px 3px 1px 2px rgb(228, 225, 225);
+    box-shadow: 3px 3px 9px 2px rgb(228, 225, 225);
 }
 .sign-up,.sign-in
 {
@@ -66,8 +65,8 @@ form{
 input{
     background: white;
     background-color: rgb(29, 8, 75);
-    padding: 12px 15px;
-    margin: 8px 15px;
+    padding: 4% 5%;
+    margin: 4% 5%;
     width: 100%;
     border: none;
     outline: none;;
@@ -79,8 +78,8 @@ input{
 .svgs{
     position: relative;
     color: white;
-    height: 20px;
-    width: 60px;
+    height: 4%;
+    width: 50%;
     display: flex;
     justify-content: space-around;
     box-sizing: border-box;
@@ -102,7 +101,7 @@ button{
     font-size: 12px;
     background:linear-gradient(to right,rgb(134, 51, 167),rgb(29, 8, 75));
     margin: 20px;
-    padding: 12px 55px;
+    
     outline: none;
     border-radius: 20px;
     transition: transform 80ms ease-in-out;
@@ -114,11 +113,16 @@ button:active{
 .but2{
     background-color: transparent;
     border: 2px solid white;
+    width: 50%;
+    height: 10%;
     cursor: pointer;
 }
 
 .but3{
     cursor: pointer;
+    width: 50%;
+    height: 10%;
+    text-align:center;
 }
 .overlay-container{
     position: absolute;
@@ -153,13 +157,13 @@ padding: 0px 40px;
 text-align: center;
 top: 0;
 height: 100%;
-width: 400px;
+width: 50%;
 transform:translateX(0);
 transition:  transform 0.6s ease-in-out;
 }
 .overlay-left
 {
-    right: 0;
+    right: 0%;
     transform: translateX(0);
 }
 .overlay-right{
@@ -181,11 +185,11 @@ transition:  transform 0.6s ease-in-out;
 }
 .change4
 {
-    transform:translateX(380px);
+    transform:translateX(50%);
 }
 .change5
 {
-    transform:translateX(0);
+    transform:translateX(0%);
     /* animation:expand 0.6s    1; */
 }
 .change6
