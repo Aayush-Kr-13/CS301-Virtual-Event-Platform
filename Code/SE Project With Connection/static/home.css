@@ -44,7 +44,7 @@
     left: 30%;
     width: 70%;
     height: 67%;
-    background-color: rgb(88, 199, 236);
+    background: linear-gradient(to right, #03c2f1,	#530350);
     border-radius: 0 0 0 100%;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .content:hover{
-    color: #ee2121;
+    color: #055317;
     transition: .5s ease;
 }
 
