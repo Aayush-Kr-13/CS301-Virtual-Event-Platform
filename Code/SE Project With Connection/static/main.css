@@ -81,6 +81,10 @@
     left: 35%;
 }
 
+.button a{
+    text-decoration: none;
+}
+
 .btn{
     height: 35px;
     width: 350%;
