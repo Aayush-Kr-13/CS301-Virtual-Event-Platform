@@ -19,6 +19,14 @@
     cursor: pointer;
 }
 
+.btn:hover{
+    box-shadow: 0 0 4px 4px #DA70D6;
+    text-decoration:solid;
+    background: linear-gradient(to right, #FF7F50,	#DA70D6);
+    color: #000000;
+    transition: .5s;
+}
+
 .container{
     position: absolute;
     left: 30%;
@@ -78,8 +86,10 @@
     top: 18px;
     height: 60px;
     width: 140px;
-    background-color: rgb(152, 14, 186);
+    background-color: rgb(0, 0, 0);
     border-radius: 20px;
+    overflow: hidden;
+    transition-delay: 5s;
 }
 
 .logo{
@@ -90,4 +100,10 @@
 .logo a{
     color: #000;
     text-decoration: none;
+}
+
+.Logo{
+    position: absolute;
+    color: azure;
+    font-style: italic;
 }

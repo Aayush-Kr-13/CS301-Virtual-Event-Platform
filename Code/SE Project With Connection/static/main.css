@@ -97,6 +97,14 @@
     cursor: pointer;
 }
 
+.btn:hover{
+    box-shadow: 0 0 4px 4px #DA70D6;
+    text-decoration:solid;
+    background: linear-gradient(to right, #FF7F50,	#DA70D6);
+    color: #000000;
+    transition: .5s;
+}
+
 .image1{
     position: absolute;
     top: 15%;
