@@ -180,3 +180,17 @@ button:hover{
     /* color: rgba(71, 163, 174, 0.947); */
     transform: scale(1.011);
 }
+
+.alert-success{
+    height: 38px;
+    width: 50%;
+    font-size: 26px;
+    display: flex;
+    text-align: center;
+    position: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 15px;
+    background-color: red;
+}
