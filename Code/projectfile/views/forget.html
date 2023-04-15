@@ -19,16 +19,21 @@
         <div class="component-list">
           <div class="component"><a href="">  JOIN </a></div >
           <div class="component"><a href="">  HOST </a></div >
-          <div class="component"><a href="login2.html">  LOG IN / REGISTER</a></div >
+          <div class="component"><a href="/Signup">  LOG IN / REGISTER</a></div >
           <div class="component"><a href="">  ABOUT US</a></div >
           </div>
     </div> 
     
     <div class="forget-container">
     <div class="main-forget">
+        <% if(message.length>0){%>
+            <div class="alert-success">
+                <%= message%>
+            </div>
+         <%}%>
         <div class="forget-div">
             <div class="forget-description">Change Password</div>
-            <form class="forget-form">
+            <form class="forget-form" action="/forget" method="post">
                 <div class="Enter-email">
                     <span class="material-symbols-outlined">
                         mail
@@ -39,15 +44,15 @@
                     <span class="material-symbols-outlined">
                         lock
                         </span>
-                    <input type="text" placeholder="New Password" name="New-Password">
+                    <input type="text" placeholder="New Password" name="NewPassword">
                 </div>
                 <div class="Enter-email">
                     <span class="material-symbols-outlined">
                         lock_reset
                         </span>
-                    <input type="text" placeholder="Confirm Password" name="Confirm-Password">
+                    <input type="text" placeholder="Confirm Password" name="ConfirmPassword">
                 </div>
-                <button class="forget-button">Submit</button>
+                <button class="forget-button"> <a href="/confirm">Next</a></button>
             </form>
         </div>
     </div>
