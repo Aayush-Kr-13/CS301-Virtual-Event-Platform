@@ -168,7 +168,7 @@ button:active{
     position: relative;
     color: white;
     background-color: burlywood;
-    background-image: url('login2.jpg');
+    
     background-size: cover;
     left: -100%;
     height: 100%;
@@ -178,6 +178,8 @@ button:active{
 }
 .overlay-left, .overlay-right{
 position: absolute;
+
+background-size: cover;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -192,10 +194,12 @@ transition:  transform 0.6s ease-in-out;
 }
 .overlay-left
 {
+    background-image: url('login3.jpg');
     right: 0%;
     transform: translateX(0);
 }
 .overlay-right{
+    background-image: url('back2.jpg');
     transform: translateX(-20%);
 }
 .change1
@@ -242,7 +246,8 @@ margin-bottom: 5%;
 input:hover{
     background:linear-gradient(to right,rgb(24, 7, 116),rgb(119, 24, 124));
     font-size: 17px;
-    color: rgba(71, 163, 174, 0.947);
+    /* color: rgba(71, 163, 174, 0.947); */
+    color: rgb(204, 209, 209);
 }
 
 .alert-success{
@@ -264,7 +269,7 @@ input:hover{
  position:absolute;
 width: 0%;
 top: -3%;
-/* display: none; */
+display: none;
 height: 0%;
 left: 15%;
 background-color: white;
@@ -275,6 +280,7 @@ transition: all 0.4s ease-out;
  height: 80%;
  width: 55%;
  outline: none;
+ /* display: none; */
  border: none;
  z-index: 2;
  background-color: white;
@@ -286,6 +292,7 @@ transition: all 0.4s ease-out;
  height: 80%;
  outline: none;
 border: none;
+/* display: none; */
  width: 60%;
  z-index: 3;
  background-color: white;
@@ -330,13 +337,15 @@ border: none;
         width: 60%;
         height: 10%;
         
-        /* display: block; */
+        display: flex;
     }
     .new-button-4
     {
+        display: block;
         background:linear-gradient(to right,rgb(134, 51, 167),rgb(29, 8, 75));
     }
     .new-button-5{
+        display: block;
         background:linear-gradient(to right,rgb(134, 51, 167),rgb(29, 8, 75));
 }}
 @media screen and (max-width:450px)
