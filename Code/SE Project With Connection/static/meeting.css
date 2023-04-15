@@ -107,3 +107,13 @@
     color: azure;
     font-style: italic;
 }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    top: 95%;
+    width: 97.3%;
+}
