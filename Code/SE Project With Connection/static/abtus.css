@@ -1,11 +1,13 @@
 *{
     font-family: Arial, sans-serif;
+    margin: 0%;
+    padding:0%;
   }
 
   .nav-links{
     text-align: right;
     height: 10vh;
-    width: 100vw;
+    width: 98.6vw;
     position: relative;
     background: linear-gradient(to left, rgb(110, 107, 111), rgb(193 187 204));
     display: flex;
@@ -64,18 +66,14 @@
 
 .logo{
     position: relative;
-    /* top: 1vh; */
+    /* top: -3vh; */
     left: 1vw;
     height: 60%;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     cursor: pointer;
-}
+   }
 
-.logo a{
-    text-decoration: none;
-    color: #000;
-}
 .name{
      text-align: center;
 
@@ -86,17 +84,31 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .person {
-    flex-basis: 250px;
-    padding: 20px;
+    flex-basis: 300px;
+    padding: 50px;
+
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
   
   .person img {
     width: 150px;
+    position: relative;
+    left: 17%;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
   
   .social-media {
@@ -119,6 +131,6 @@
   }
   
   .social-media ul li img {
-    width: 30px;
+    width: 50px;
   }
   
