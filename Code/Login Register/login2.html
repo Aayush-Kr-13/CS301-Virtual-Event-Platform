@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login2.css">
+    <link rel="stylesheet" href="../static/login2.css">
     <title>Document</title>
 </head>
 <body>
+    <!-- <% if(message.length>0){%>
+        <div class="alert-success">
+            <%= message%>
+        </div>
+     <%}%> -->
     <div class="container" id="main">
+        
         <div class="sign-up" id="sign-up">
-            <form>
+            <form action="/signup" method="post">
                 <div class="det">Create Account</div>
                 <div class="svgs">
                     <div class="svg1"><img src = "facebook.svg" alt="My Happy SVG"/></div>
@@ -19,14 +25,14 @@
                 <div class="det2">
                     or use email for registeration
                 </div>
-                <input  class="inp" type="text" value="Name" placeholder="Name">
-                <input   class="inp" type="email" value="Enter email" placeholder="Enter email">
-                <input  class="inp" type="password" value="" placeholder="Enter Password">
-                <button >Sign Up</button>
+                <input  class="inp" type="text" value="" placeholder="Name" name="name">
+                <input   class="inp" type="email" value="" placeholder="Enter email" name ="email">
+                <input  class="inp" type="Password" value="" placeholder="Enter Password" name="Password">
+                <button  class="but3" type="submit" >Sign Up</button>
             </form>
         </div>
         <div class="sign-in" id="sign-in">
-            <form>
+            <form  action="/login" method="post">
                 <div class="det">Sign in to the Spark</div>
                 <div class="svgs">
                     <div class="svg1"><img src = "facebook.svg" alt="My Happy SVG"/></div>
@@ -34,26 +40,30 @@
                 </div>
                 <div class="det2">
                     or use email for your account
+                    
                 </div>
-                <input class="input" type="email" value="" placeholder="Enter email">
-                <input class="input" type="password" value="" placeholder="Enter Password">
-                <div class="forget"><a href="">Forget  your password?</a></div>
+                <input class="inp" type="email" value="" placeholder="Enter email" name="email">
+                <input class="inp" type="password" value="" placeholder="Enter Password" name="password">
+                <div class="forget"><a href="">Forget password?</a></div>
                 <!-- <div class="inp"> -->
-                <button class="but3" >Sign In</button>
+                <button class="but3"  type="submit" >Sign In</button>
+                
             </form>
+           
         </div>
         
          <div class="overlay-container" id="overlay-container">
          <div class="overlay" id="overlay"> 
             <div class="overlay-left" id="overlay-left">
-                <div class="cont1">Welcome Back!</div>
-                <div class="cont2">To keep Connected with us please login with your personal details</div>
-                 <button class="but2"  id="SignIn" onclick="addi()">Sign In</button>
+                <div class="cont1">New Here?</div>
+            <div class="cont2">Sign Up and discover a great amount of new opportunites</div>
+             <button class="but2"  id="SignIn" onclick="addi()" >Sign Up</button>
             </div>
         <div class="overlay-right" id="overlay-right">
-            <div class="cont1">New Here?</div>
-            <div class="cont2">Sign Up and discover a great amount of new opportunites</div>
-             <button class="but2" id="SignUp" onclick="removi()">Sign Up</button> 
+            
+             <div class="cont1">Welcome Back!</div>
+                <div class="cont2">To keep Connected with us please login with your personal details</div>
+                <button class="but2" id="SignUp" onclick="removi()">Sign In</button> 
         </div>
         
     </div>
@@ -102,5 +112,7 @@
             // Button7.classList.remove("change6");
   }
         </script>
+
+
 </body>
 </html>

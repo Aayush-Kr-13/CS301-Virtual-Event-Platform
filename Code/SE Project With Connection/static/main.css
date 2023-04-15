@@ -16,6 +16,7 @@
     padding: 12px 12px;
     position: relative;
 }
+
 .nav-links ul li a{
     border-radius: 10px;
     color: #000;
@@ -25,6 +26,7 @@
     border: 2px solid #000;
     transition: 0.4s ease;
 }
+
 .nav-links ul li a:hover{
     border-color: #10bdcd;
     color: #7173e6;
@@ -44,7 +46,7 @@
     left: 30%;
     width: 70%;
     height: 67%;
-    background-color: rgb(88, 199, 236);
+    background: linear-gradient(to right, #03c2f1,	#530350);
     border-radius: 0 0 0 100%;
 }
 
@@ -53,10 +55,11 @@
     position: absolute;
     left: 5%;
     top: 30%;
+    color: #003b38;
 }
 
 .content:hover{
-    color: #ee2121;
+    color: #055317;
     transition: .5s ease;
 }
 
