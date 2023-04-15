@@ -17,18 +17,31 @@
 {
 color: rgb(183, 186, 186);
 }
+.forget-container
+{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(146, 143, 149);
+}
 .main-forget
 {
-    height: 57vh;
+    height: 20vh;
     width: 27vw;
     margin: 5% 0% 0% 30% ;
     /* padding: 5%; */
+    background-color: white;
     box-sizing: border-box;
+    border-radius: 1rem;
 }
 .forget-div
 {
     height: 100%;
     width: 100%;
+    border-radius: 1rem;
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
