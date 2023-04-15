@@ -2,6 +2,16 @@
 {
     box-sizing: border-box;
 }
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+    color: rgb(183, 186, 186);
+    margin-left: 0%;
+    /* margin-left: -8%; */
+  }
 body{
     align-items: center;
     display: flex;
@@ -47,7 +57,7 @@ form{
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 0px 50px;
+    padding: 0% 10%;
     text-align: center;
 }
 .det
@@ -64,12 +74,28 @@ form{
     line-height: 20px;
     margin: 15px 0px 20px 0px;
 }
+.enter-field
+{
+    width: 100%;
+    background-color: rgb(29, 8, 75);
+    position: relative;
+    /* left:-8%; */
+    margin: 4% 5%;
+    padding-left: 1%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+::placeholder
+{
+    color:rgb(183, 186, 186);
+}
 input{
     background: white;
     background-color: rgb(29, 8, 75);
-    padding: 4% 5%;
-    margin: 4% 5%;
-    width: 100%;
+    padding: 4% 2%;
+    width: 90%;
     border: none;
     outline: none;;
 }

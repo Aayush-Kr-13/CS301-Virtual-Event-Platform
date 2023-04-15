@@ -89,3 +89,12 @@ color: rgb(183, 186, 186);
     border-radius: 5rem;
     background:linear-gradient(to right,rgb(100, 4, 138),rgb(29, 8, 75)); 
 }
+button:hover{
+    transform: scale(0.90);
+}
+.Enter-email:hover{
+    background:linear-gradient(to right,rgb(24, 7, 116),rgb(119, 24, 124));
+    /* font-size: 17px; */
+    /* color: rgba(71, 163, 174, 0.947); */
+    transform: scale(1.011);
+}
