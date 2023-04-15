@@ -115,8 +115,17 @@ input{
 }
 .forget{
     margin-top: 12px;
+    text-decoration: none;
 }
-
+.forget:active
+{
+    color: blue;
+}
+.forget a
+{
+    text-decoration: none;
+    color:rgb(29, 8, 75);
+}
 img
 {
     box-sizing: border-box;
@@ -142,6 +151,7 @@ button:active{
     border: 2px solid white;
     width: 50%;
     height: 10%;
+    font-size: 1.4vw;
     background:linear-gradient(to right,rgb(134, 51, 167),rgb(29, 8, 75));
     cursor: pointer;
 }
@@ -150,6 +160,7 @@ button:active{
     cursor: pointer;
     width: 50%;
     height: 10%;
+    font-size: 1.4vw;
     background:linear-gradient(to right,rgb(134, 51, 167),rgb(29, 8, 75));
     text-align:center;
 }
@@ -264,7 +275,7 @@ input:hover{
  position:absolute;
 width: 0%;
 top: -3%;
-/* display: none; */
+display: none;
 height: 0%;
 left: 15%;
 background-color: white;
@@ -330,7 +341,7 @@ border: none;
         width: 60%;
         height: 10%;
         
-        /* display: block; */
+        display:flex;
     }
     .new-button-4
     {
