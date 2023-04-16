@@ -140,7 +140,8 @@ app.post('/Signup', async(req, res) => {
      name,email, Password:hashedPassword
   });
   mydata.save().then(() => {
-    res.render("home.html");
+    //res.render("home.html");
+    res.redirect('/Signup');
 
   }).catch((err) => {
     console.log(err);
