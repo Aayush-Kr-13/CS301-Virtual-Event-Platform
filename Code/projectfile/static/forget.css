@@ -95,7 +95,7 @@ color: rgb(183, 186, 186);
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color:rgb(229 229 231)
 }
@@ -103,6 +103,7 @@ color: rgb(183, 186, 186);
 {
     height: 57vh;
     width: 27vw;
+    position:absolute;
     /* padding: 5%; */
     background-color: rgb(255, 255, 255);
     box-sizing: border-box;
@@ -171,6 +172,11 @@ color: rgb(183, 186, 186);
     border-radius: 5rem;
     background:linear-gradient(to right,rgb(100, 4, 138),rgb(29, 8, 75)); 
 }
+.forget-button a
+{
+    text-decoration: none;
+    color: rgb(183, 186, 186);
+}
 button:hover{
     transform: scale(0.90);
 }
@@ -180,17 +186,25 @@ button:hover{
     /* color: rgba(71, 163, 174, 0.947); */
     transform: scale(1.011);
 }
-
-.alert-success{
-    height: 38px;
-    width: 50%;
-    font-size: 26px;
+.meassage-container
+{
+    top:14vh;
+    width: 100%;
+    /* left: 42vw; */
     display: flex;
     text-align: center;
     position: center;
+    z-index: 16;
     justify-content: center;
-    padding: 10px;
-    border: 2px solid red;
+}
+
+.alert-success{
+    z-index:20;
+    margin-top: 6vh;
+    height: 5vh;
+    position: relative;
+    left: -5%;
+    font-size: 26px;
     border-radius: 15px;
-    background-color: red;
+    background:linear-gradient(to right,rgb(24, 7, 116),rgb(119, 24, 124));
 }
