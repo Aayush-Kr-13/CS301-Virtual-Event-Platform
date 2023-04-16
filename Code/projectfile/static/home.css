@@ -58,11 +58,11 @@
     text-decoration: none;
     color:rgb(29, 8, 75);
 }
-
-.logo{
-    position: absolute;
-    top: 4px;
-    left: 15px;
+.logo-1{
+    position: relative;
+    /* top: 1vh; */
+    left: 1vw;
+    height: 60%;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     cursor: pointer;
