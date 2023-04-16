@@ -20,7 +20,7 @@ color: rgb(183, 186, 186);
 .nav-links{
     text-align: right;
     height: 10vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
     background: linear-gradient(to left, rgb(110, 107, 111), rgb(193 187 204));
     display: flex;
