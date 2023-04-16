@@ -5,8 +5,8 @@ const app = express();
 const ejs = require('ejs');
 const nodemailer = require('nodemailer');
 const bodyParser = require("body-parser");
-// const bcrypt = require('bcrypt');
-
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const sendEmail= require('./sendmail')
 
 const port = 800;
@@ -98,17 +98,46 @@ app.get('/logout', (req, res) => {
     }
   });
 });
+
+// -----------------------hash password--------------------------
+async function hashPassword(password) {
+  try {
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    return hashedPassword;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+async function comparePassword(plainPassword, hashedPassword) {
+  try {
+    const match = await bcrypt.compare(plainPassword, hashedPassword);
+    return match;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+// -------------------------------post request---------------------------
+
 app.post('/Signup', async(req, res) => {
   const email = req.body.email;
   const name = req.body.name;
   const pwd = req.body.Password;
+
   const useremail=  await Signup.findOne({email:email});
   if( useremail && useremail.email=== email){
       req.flash('message', ' Email already exists');
       res.redirect('/Signup');
   }
+  const hashedPassword = await hashPassword(pwd);
+  console.log(hashedPassword);
+  
   const mydata = new Signup({
-     name,email, Password:pwd
+     name,email, Password:hashedPassword
   });
   mydata.save().then(() => {
     res.render("home.html");
@@ -122,7 +151,6 @@ app.post('/Signup', async(req, res) => {
 app.post('/login', async(req, res) => {
     try{
         const email=req.body.email;
-        // const element=getElementById("alert-message")
         if(email.length==0){
           req.flash('message', ' Enter valid email details');
           res.redirect("/Signup");
@@ -133,13 +161,18 @@ app.post('/login', async(req, res) => {
           const useremail=  await Signup.findOne({email:email});
           //  console.log(useremail.Password);
           console.log(password);
-          
-          if(useremail.Password === password){
-            res.redirect("/home");
-          }else{
-            req.flash('message', ' invalid login details');
-            res.redirect("/Signup");
-          }
+
+          console.log(useremail.Password);
+          bcrypt.compare(password, useremail.Password, (err, result) => {
+            if (result === true) {
+              res.redirect("/home");
+              console.log('Passwords match!');
+            } else {
+              console.log('Passwords do not match!');
+              req.flash('message', ' invalid login details');
+              res.redirect("/Signup");
+            }
+          });
         }
         }catch(error){
           req.flash('message', ' invalid login details');
@@ -160,45 +193,52 @@ app.post('/forget', async(req, res) =>{
       const email= req.body.Email;
       const pass= req.body.NewPassword;
       const cpass= req.body.ConfirmPassword;
-      const user = await Signup.findOne({ email: email });
-  if (!user) {
-    req.flash('message', 'This email is not registered. Please try using your registered email.');
-    return res.redirect('/forget');
-  }
+      if(email.length==0|| pass.length==0|| cpass.length==0){
+        req.flash('message', 'Enter details correctly');
+        return res.redirect('/forget');
+      }
+      else{
 
-  try{
-    if(pass!=cpass){
-      req.flash('message', 'Enter password correctly');
-      return res.redirect('/forget');
-    }
-
-    else{
-      const otp = generateOTP(6); // generate a 6-digit OTP
-      console.log(otp);
-      
-      // await Signup.updateOne({ email: email }, { $set: { Password: pass } });
-      const mydata = new otppass({
-        email, Password: cpass,otp
-      });
-      sendEmail(email, otp);
-   mydata.save().then(() => {
-    req.flash('message', 'Otp has set to your registered gmail');
-    res.redirect("/confirm");
- 
-   }).catch((err) => {
-     console.log(err);
-     res.status(400).send("This data has not been saved to the database")
-   })
-      // req.flash('message', 'password changed successfully');
-      // return res.redirect('/Signup');
-    }
-
-  }
-  catch (err) {
-    console.log(err);
-    req.flash('message', 'An error occurred while updating your password. Please try again later.');
-    res.redirect('/forget'); 
-  }
+        const user = await Signup.findOne({ email: email });
+        if (!user) {
+          req.flash('message', 'This email is not registered. Please try using your registered email.');
+          return res.redirect('/forget');
+        }
+        
+        try{
+          if(pass!=cpass){
+            req.flash('message', 'Enter password correctly');
+            return res.redirect('/forget');
+          }
+          
+          else{
+            const otp = generateOTP(6); // generate a 6-digit OTP
+            console.log(otp);
+            
+            // await Signup.updateOne({ email: email }, { $set: { Password: pass } });
+            const mydata = new otppass({
+              email, Password: cpass,otp
+            });
+            sendEmail(email, otp);
+            mydata.save().then(() => {
+              req.flash('message', 'Otp has set to your registered gmail');
+              res.redirect("/confirm");
+              
+            }).catch((err) => {
+              console.log(err);
+              res.status(400).send("This data has not been saved to the database")
+            })
+            // req.flash('message', 'password changed successfully');
+            // return res.redirect('/Signup');
+          }
+          
+        }
+        catch (err) {
+          console.log(err);
+          req.flash('message', 'An error occurred while updating your password. Please try again later.');
+          res.redirect('/forget'); 
+        }
+      }
 
 });
   app.post('/confirm', async(req, res) =>{
@@ -215,7 +255,9 @@ app.post('/forget', async(req, res) =>{
           res.redirect("/confirm");
         }
         else{
-          await Signup.updateOne({$set: { email: user.email, Password: user.Password } });
+          const hashedPassword = await hashPassword(user.Password);
+          await Signup.updateOne({$set: { email: user.email, Password: hashedPassword } });
+          await otppass.deleteOne({otp:uotp});
           req.flash('message', 'Password changed successfully');
           res.redirect("/signup");
         }
