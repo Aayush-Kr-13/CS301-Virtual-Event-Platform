@@ -88,6 +88,12 @@
 {
     height: 80vh;
     width: 100%;
+    top: 10vh;
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     background-color: rgb(227, 226, 226);
 }
 .container
@@ -96,7 +102,7 @@
     height: 63vh;
     display: block;
     left: 25vw;
-    top: 19vh;
+    top: 8vh;
     width:50vw ;
     background : white;
     border-radius: 10px;
@@ -331,21 +337,23 @@ input:hover{
     position:absolute;
     top: 11.5vh;
     left: 43%;
+    width: auto;
     display: flex;
     text-align: center;
     justify-content: center;
+    flex-direction: row;
     /* padding: 0.5vw; */
 }
 .alert-success{
-    /* height: 38px; */
+    height: 38px;
     position: absolute;
-    /* width: 50%; */
+    width: auto;
+    z-index: 10;
+    left: 44%;
+    top:3%;
     /* top: 20vh; */
     font-size: 26px;
-    display: flex;
-    text-align: center;
-    position: center;
-    justify-content: center;
+    display: inline;
     padding: 3px;
     /* border: 2px solid red; */
     border-radius: 15px;
