@@ -8,7 +8,7 @@
     text-align: center;
     height: 10vh;
     width: 100%;
-    position:absolute;
+    position:fixed;
     z-index: 10;
     background: linear-gradient(to left, rgb(110, 107, 111), rgb(193 187 204));
     display: flex;
@@ -26,7 +26,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 35%;
+    width: 40%;
     /* width: 10vw; */
     position: relative;
 }
@@ -49,10 +49,11 @@
     transition: 0.4s ease;
 }
 .component-1:hover {
-    border: 2px solid rgb(174, 172, 179);
+    border: 2px solid rgb(38, 4, 122);
+    font-weight: 900;
 }
 .component-1:hover a{
-    color:rgb(167, 165, 171);
+    color:rgb(86, 0, 120);
 }
 .component-1 a{
     text-decoration: none;

@@ -8,8 +8,8 @@ const bodyParser = require("body-parser");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const sendEmail= require('./sendmail')
-
-const port = 800;
+const dotenv=require('dotenv').config()
+const port = process.env.PORT||3000;
 
 app.use(express.json());
 const session=require('express-session');
@@ -22,15 +22,13 @@ app.use(session({
   cookie:{Maxage:60000},
   saveUninitialized: true,
 }));
-//  cookie:{Maxage:60000},
 app.use(flash());
-// console.log("wdfg");
 const mongoose = require('mongoose');
 const { request } = require("http");
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/RegisterSchema');
+  await mongoose.connect('mongodb+srv://aayush_1302:aayush1302@cluster0.qeurofq.mongodb.net/RegisterSchema?retryWrites=true&w=majority');
   console.log("connected");
 }
 
@@ -74,6 +72,22 @@ app.get('/confirm', (req, res) => {
   const param = {}
   res.status(200).render('confirm.html',{message: req.flash('message')});
 })
+
+app.get('/subscription', (req, res) => {
+  const param = {}
+  res.status(200).render('subscription.html',{message: req.flash('message')});
+})
+
+app.get('/abtus', (req, res) => {
+  const param = {}
+  res.status(200).render('abtus.html',{message: req.flash('message')});
+})
+
+app.get('/main', (req, res) => {
+  const param = {}
+  res.status(200).render('main.html',{message: req.flash('message')});
+})
+
 
 app.get('/home', (req, res) => {
   // const param = {}
@@ -199,8 +213,8 @@ app.post('/forget', async(req, res) =>{
         return res.redirect('/forget');
       }
       else{
-
-        const user = await Signup.findOne({ email: email });
+        const user = await Signup.findOne({ email: email }).exec();
+        console.log(user);
         if (!user) {
           req.flash('message', 'This email is not registered. Please try using your registered email.');
           return res.redirect('/forget');
